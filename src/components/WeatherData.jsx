@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import '../style.css'
 
 const weatherData = (props) => {
@@ -10,7 +10,7 @@ const weatherData = (props) => {
                     {/* This is for Searching data */}
                     <div className='search'>
                         <input type='text' placeholder='Enter City Name'
-                            onChange={e => props.setname(e.target.value)}
+                            onChange={e => props.setname(e.target.value)} onKeyUp={props.func}
                         />
                         <button onClick={props.func}><img src='/Images/search.png' alt='' /></button>
                     </div>
@@ -42,6 +42,13 @@ const weatherData = (props) => {
                                     <p>{Math.round(props.data.speed)} km/h</p>
                                     <p>Wind</p>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* This is for current time and date */}
+                        <div className='date'>
+                            <div className='displayDate'>
+                                <p>{props.day} || {props.date}/{props.month}/{props.year} || {props.ctime}</p>
                             </div>
                         </div>
 
